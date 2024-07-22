@@ -1,0 +1,31 @@
+<div class="allUrl">
+  <div class="container">
+    <div class="border-1 flex-wrap row gap-3">
+      <% data.forEach((ele) => { %>
+
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title"><%= `${ele?.short_id}` %></h5>
+          <h6 class="mb-0">Generated URl</h6>
+          <p class="mt-0 card-subtitle mb-3 text-muted">
+            /api/v1/redirect/url/<%= `${ele?.short_id}` %>
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <%= `${ele?.redirect_url}` %>
+          </h6>
+
+          <!-- <h4>Visits: <%= `${ele?.visit_history?.length}` %></h4> -->
+
+          <a
+            href="/api/v1/redirect/url/<%= `${ele?.short_id}` %>"
+            class="btn btn-primary ms-auto"
+            target="_blank"
+            >Visit Website</a
+          >
+        </div>
+      </div>
+
+      <%}) %>
+    </div>
+  </div>
+</div>
